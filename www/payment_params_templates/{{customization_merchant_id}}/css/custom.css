@@ -135,6 +135,14 @@ body {
   color: #999EA7;
 }
 
+.accept .accept_text {
+  margin-right: 10px
+}
+
+.accept .accept_list {
+  margin-left: 0px;
+}
+
 /* Input placeholder */
 .form input::placeholder {
   opacity: 0;
@@ -226,5 +234,11 @@ input:checked~.checkmark svg {
   .title {
     font-size: 24px;
     text-align: left;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .accept .accept_text, .accept .accept_list {
+    display: inline-block;
   }
 }
