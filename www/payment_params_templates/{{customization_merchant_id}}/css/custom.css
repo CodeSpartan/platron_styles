@@ -1,0 +1,183 @@
+body {
+  font-family: Montserrat, sans-serif;
+  color: #1E2A35;
+  font-size: 16px;
+}
+
+.title {
+  font-weight: bold;
+  color: inherit;
+}
+
+.form.form_card {
+  margin: 10px 0 190px 0;
+}
+
+.bg_card {
+  width: 520px;
+  height: 300px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(30, 42, 53, 0.05);
+}
+
+.bg_card.bg_card_cvv {
+  top: 100px;
+  left: 40px;
+}
+
+.form .form_col.form_col_cvv {
+  left: 380px;
+  top: 300px;
+  right: auto;
+}
+
+.hideShowPassword-wrapper {
+  width: 100px !important;
+}
+
+.form .form_in {
+  width: 546px;
+  padding: 40px;
+}
+
+.form input {
+  font-family: Montserrat, sans-serif;
+  padding: 0 15px;
+  height: 60px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: inherit;
+  border: 1px solid #d2d4d7;
+}
+
+.form.form_card .form_in input {
+  text-transform: none;
+}
+
+.card-date-double-input {
+  width: 100px !important;
+}
+
+.form .form_col.form_col_small .form_field+span {
+  margin: 14px 8px 0 8px;
+  color: #999EA7;
+  font-size: 16px;
+}
+
+.form .form_col {
+  margin-top: 20px;
+}
+
+.info,
+.title .ico,
+.hideShowPassword-toggle,
+.bg_card.bg_card_cvv:before {
+  display: none;
+}
+
+.form input {
+  padding: 12px 15px 0 15px;
+}
+
+.form input.field_error, .form select.field_error {
+  border: 1px solid red;
+  box-shadow: none;
+  color: inherit;
+}
+
+.form input:focus {
+  border: 1px solid #d2d4d7;
+  box-shadow: none;
+  opacity: 1;
+}
+
+.accept .accept_text,
+.form .form_text {
+  color: #999EA7;
+}
+
+.btn.btn_green {
+  background: #1FA4D4;
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+.btn.btn_green:after, .btn.btn_green:before {
+  display: none;
+}
+
+.btn {
+  font-size: 16px;
+  font-family: inherit;
+}
+
+.offer_checkbox_container .offer_checkbox_label {
+  color: #999EA7;
+}
+
+/* Input placeholder */
+.form input::placeholder {
+  opacity: 0;
+}
+
+.custom-placeholder {
+  font-size: 16px;
+  color: #999EA7;
+  position: absolute;
+  pointer-events: none;
+  top: 21px;
+  left: 16px;
+  transition: font-size 0.2s, top 0.2s;
+}
+
+/*.form input.field_error+.custom-placeholder {
+  color: red;
+}*/
+.form input:focus+.custom-placeholder,
+.form input:not(:placeholder-shown)~.custom-placeholder {
+  top: 4px;
+  font-size: 12px;
+}
+
+/* Checkbox */
+.checkbox {
+  color: inherit;
+}
+
+.checkbox:before {
+  display: none;
+}
+
+.checkmark {
+  border: 2px solid #999ea7;
+  opacity: 0.6;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 14px;
+  width: 14px;
+  border-radius: 2px;
+}
+
+.checkmark svg {
+  fill: #27C79A;
+  position: relative;
+  top: -3px;
+  display: none;
+}
+
+.checkbox:hover .checkmark {
+  opacity: 1;
+}
+
+input:checked~.checkmark {
+  background: #efeff4;
+  border-color: #efeff4;
+  opacity: 1;
+}
+
+input:checked~.checkmark svg {
+  display: inline;
+}
