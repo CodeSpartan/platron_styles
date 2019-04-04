@@ -10,7 +10,8 @@ body {
 }
 
 .bank_form {
-  width: 500px;
+  max-width: 600px;
+  /*width: 500px;*/
   margin: 0 auto;
 }
 
@@ -77,6 +78,11 @@ body {
 
 .form .form_col {
   margin-top: 20px;
+}
+
+.form .form_item {
+  width: 80%;
+  max-width: 370px;
 }
 
 .tabs .tabs_group,
@@ -193,4 +199,26 @@ input:checked~.checkmark {
 
 input:checked~.checkmark svg {
   display: inline;
+}
+
+@media only screen and (max-width: 540px) {
+  .form.form_card {
+    width: auto;
+  }
+
+  .form.form_card .form_in {
+    width: auto;
+  }
+
+  .form .form_col.form_col_cvv {
+    left: auto;
+    right: 0px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .title {
+    font-size: 24px;
+    text-align: left;
+  }
 }
