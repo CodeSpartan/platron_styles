@@ -249,6 +249,8 @@ input:checked~.checkmark svg {
 .checkout_left {
   display: flex;
   margin-bottom: 4px;
+  align-items: center;
+  height: 50px;
 }
 
 .checkout_text {
@@ -264,24 +266,74 @@ input:checked~.checkmark svg {
   margin-top: 21px;
 }
 
+@media only screen and (max-width: 940px) {
+  .checkout .price {
+    font-size: 20px;
+    margin-left: 5px;
+  }
+}
+
 @media only screen and (max-width: 720px) {
   .btn {
     height: 50px;
   }
+
+  .checkout {
+    padding-left: 25px;
+  }
+
+  .checkout .checkout_left {
+    margin-top: 0;
+  }
 }
 
 @media only screen and (max-width: 540px) {
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .bg_card {
+    height: 420px;
+  }
+
   .form.form_card {
     width: auto;
+    margin-bottom: 200px;
   }
 
   .form.form_card .form_in {
     width: auto;
+    padding: 20px;
   }
 
   .form .form_col.form_col_cvv {
+    top: 239px;
     left: auto;
-    right: 0px;
+    right: 20px;
+  }
+
+  .form_wrap {
+    margin-left: 0;
+  }
+
+  .form-wrap .form-item {
+    padding-left: 0;
+  }
+
+  .accept {
+    width: auto;
+    top: 95px;
+    left: 0;
+  }
+
+  .checkout {
+    margin-top: 30px;
+    margin-left: 0;
+  }
+
+  .offer_checkbox_container {
+    margin-left: 12px;
   }
 }
 
@@ -289,11 +341,5 @@ input:checked~.checkmark svg {
   .title {
     font-size: 24px;
     text-align: left;
-  }
-}
-
-@media only screen and (max-width: 420px) {
-  .accept .accept_text, .accept .accept_list {
-    display: inline-block;
   }
 }
