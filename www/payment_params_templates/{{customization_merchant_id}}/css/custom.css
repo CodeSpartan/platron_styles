@@ -4,14 +4,18 @@ body {
   font-size: 16px;
 }
 
+.container {
+  background: none;
+}
+
 .wrapper {
   border-radius: 2px;
-  box-shadow: 0px 5px 15px rgba(30, 42, 53, 0.05);
+  box-shadow: none;
+  background: none;
 }
 
 .bank_form {
   max-width: 600px;
-  /*width: 500px;*/
   margin: 0 auto;
 }
 
@@ -21,7 +25,12 @@ body {
 }
 
 .form.form_card {
-  margin: 10px 0 190px 0;
+  margin: 10px 0 187px 0;
+}
+
+.form_wrap {
+  margin-left: 28px;
+  margin-bottom: 0;
 }
 
 .bg_card {
@@ -91,7 +100,9 @@ body {
 .info,
 .title .ico,
 .hideShowPassword-toggle,
-.bg_card.bg_card_cvv:before {
+.bg_card.bg_card_cvv:before,
+.js_email_checkbox,
+.currency {
   display: none;
 }
 
@@ -111,6 +122,18 @@ body {
   opacity: 1;
 }
 
+.accept {
+  position: relative;
+  width: 250px;
+  top: 49px;
+  left: 32px;
+}
+
+.accept .accept_text {
+  font-size: 12px;
+  margin: 0 0 9px 4px;
+}
+
 .accept .accept_text,
 .form .form_text {
   color: #999EA7;
@@ -120,6 +143,7 @@ body {
   background: #1FA4D4;
   border-radius: 2px;
   box-shadow: none;
+  width: 210px;
 }
 
 .btn.btn_green:after, .btn.btn_green:before {
@@ -131,8 +155,12 @@ body {
   font-family: inherit;
 }
 
-.offer_checkbox_container .offer_checkbox_label {
-  color: #999EA7;
+.offer_checkbox_container .offer_checkbox_label,
+.offer_checkbox_container .offer_checkbox_label a {
+  /*color: #000;
+  opacity: 0.5;*/
+  line-height: 1.2em;
+  font-size: 11px;
 }
 
 .accept .accept_text {
@@ -189,7 +217,7 @@ body {
 }
 
 .checkmark svg {
-  fill: #27C79A;
+  fill: #fff;
   position: relative;
   top: -3px;
   display: none;
@@ -200,13 +228,40 @@ body {
 }
 
 input:checked~.checkmark {
-  background: #efeff4;
-  border-color: #efeff4;
+  background: #27C79A;
+  border-color: #27C79A;
   opacity: 1;
 }
 
 input:checked~.checkmark svg {
   display: inline;
+}
+
+.checkout {
+  margin-top: 1px;
+  margin-left: 14px;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  background: none;
+}
+
+.checkout_left {
+  display: flex;
+  margin-bottom: 4px;
+}
+
+.checkout_text {
+  font-size: 20px;
+}
+
+.price {
+  font-size: 20px;
+}
+
+.offer_checkbox_container {
+  margin-left: 42px;
+  margin-top: 21px;
 }
 
 @media only screen and (max-width: 720px) {
