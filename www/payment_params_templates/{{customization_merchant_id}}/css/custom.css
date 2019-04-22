@@ -102,8 +102,8 @@ body {
 .hideShowPassword-toggle,
 .bg_card.bg_card_cvv:before,
 .js_email_checkbox,
-.currency {
-  display: none;
+.js_myemail {
+  display: none !important;
 }
 
 .form input {
