@@ -299,11 +299,14 @@ input:checked~.checkmark svg {
 
   .bg_card {
     height: 260px;
+    width: 100%;
   }
 
   .bg_card.bg_card_cvv {
     display: block;
     height: 249px;
+    width: auto;
+    right: 0;
   }
 
   .form.form_card {
