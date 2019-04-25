@@ -102,7 +102,12 @@ body {
 .hideShowPassword-toggle,
 .bg_card.bg_card_cvv:before,
 .js_email_checkbox,
-.js_myemail {
+.js_myemail,
+.currency,
+.gds_block,
+.js_popup_postpone,
+#simple_input_form,
+.footer_ind {
   display: none !important;
 }
 
@@ -157,8 +162,6 @@ body {
 
 .offer_checkbox_container .offer_checkbox_label,
 .offer_checkbox_container .offer_checkbox_label a {
-  /*color: #000;
-  opacity: 0.5;*/
   line-height: 1.2em;
   font-size: 11px;
 }
@@ -186,9 +189,6 @@ body {
   transition: font-size 0.2s, top 0.2s;
 }
 
-/*.form input.field_error+.custom-placeholder {
-  color: red;
-}*/
 .form input:focus+.custom-placeholder,
 .form input:not(:placeholder-shown)~.custom-placeholder {
   top: 4px;

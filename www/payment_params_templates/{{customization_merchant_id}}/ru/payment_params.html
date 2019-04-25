@@ -47,6 +47,7 @@
 
         <div class="out out_ind">
             <noscript><h3 class="title turn_on_js">Для продолжения включите javascript</h3></noscript>
+            <!--TESTMODE--><h3 class="title test_mode">Тестовый режим</h3><!--/TESTMODE-->
             <div class="wrapper wrapper_opted">
                 <div class="opted">
                     <button class="btn_menu js_menu"></button>
@@ -136,8 +137,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-
+                            </div>                
 
                             <div class="form form_wrap">
                                 <div class="form_item">
@@ -186,6 +186,9 @@
                                         {{ps_amount_to_pay}}
                                         <img src='/images/svg/currency/{{ps_currency}}.svg' alt='{{ps_currency}}'>
                                     </div>
+                                    <!--DIFFERENT_CURRENCY-->
+                                     <span class="currency">{{not_converted_amount_with_comission}} <img src='/images/svg/currency/{{currency}}.svg' alt='{{currency}}'></span>
+                                     <!--/DIFFERENT_CURRENCY-->
                                 </div>
                                 <button class="btn btn_green js_payment_button" type="submit"><span>Оплатить картой</span></button>
                             </div>
@@ -208,14 +211,151 @@
                         </form>
                     </div>
                     <!--/CONTAINER_BANKCARD-->
+                    <!--CONTAINER_NOT_BANKCARD-->
+                    <div class="container js_tab_content" data-id="#{{category_alias}}" id="simple_input_form">
+                        <form class="js_not_card_form">
+                            <div class="payment js_payment_systems">
+                                <div class="payment_in js_payment_in">
+                                    <input type='hidden' value='{{ps_name}}' class='js_ps_name'>
+                                    <!--NOT_BANKCARD_PAYMENT_SYSTEM-->
+                                    <div class="payment_item js_payment_system_item">
+                                        <div class="js_hidden_ps_name">{{ps_name}}</div>
+                                        <div class="payment_ico">
+                                            <a href="/info/ru/mini/{{small_ps_name}}" target="_blank"><i class="ico ico_info instruction"></i></a>
+                                            <span class="ico">
+                                                <img src="/images/svg/payment_systems/{{ps_name}}.svg" alt="img">
+                                            </span>
+                                        </div>
+                                        <div class="price js_inner_ps_price">
+                                            {{ps_amount_to_pay}}
+                                            <img src='/images/svg/currency/{{ps_currency}}.svg' alt='{{ps_currency}}'>
+                                        </div>
+                                        <!--DIFFERENT_CURRENCY-->
+                                        <span class="currency">{{not_converted_amount_with_comission}} <img src='/images/svg/currency/{{currency}}.svg' alt='{{currency}}'></span>
+                                        <!--/DIFFERENT_CURRENCY-->
+                                    </div>
+                                    <!--/NOT_BANKCARD_PAYMENT_SYSTEM-->
+                                </div>
+                            </div>
+                            <div class="form form_wrap">
+                                <div class="form_item">
+                                    <div class="form_label">Номер телефона</div>
+                                    <div class="form_field">
+                                        <input class="js_phone_number" type="text" name="user_phone" placeholder="79031234567" value="{{user_phone}}">
+                                        <div class="info js_input_field_info">
+                                            <i class="ico ico_info input_field_info_btn js_input_field_info_btn"></i>
+                                            <div class="info_window">Номер указывается в международном формате (только цифры). Например: 79031234567 или 380445430591</div>
+                                        </div>
+                                    </div>
+                                    <div class="form_text form_text_nowrap">Нужен для отслеживания статуса платежа</div>
+                                </div>
 
+                                <!--PS_ADDITIONAL_FIELD-->
+                                <div class="form_item ps_additional_field form_item js_ps_additional_field {{ps_name}}">
+                                    <div class="js_form_item_ps_additional">
+                                        <div class="form_label">{{param_name}}</div>
+                                        <div class="form_field">
+                                            <input type="text" name="{{param_id}}" placeholder="{{param_placeholder}}" pattern="{{reg_exp}}" data-is-required="{{is_required}}" value="{{param_value}}">
+                                        </div>
+                                        <div class="form_text">{{param_description}}</div>
+                                    </div>
+                                </div>
+                                <!--/PS_ADDITIONAL_FIELD-->
+                            </div>
+
+                            <label class="checkbox js_email_checkbox">
+                                <input class="js_email_send_checkbox" type="checkbox">
+                                <span>Прислать на мой e-mail информацию об оплате</span>
+                            </label>
+
+                            <div class="form form_mail js_myemail">
+                                <div class="form_item">
+                                    <div class="form_field">
+                                        <input class="js_email_input" type="text" name="user_contact_email" placeholder="ivanov@gmail.com" value="{{user_contact_email}}">
+                                        <div class="form_text form_text_nowrap">Нужен для отслеживания статуса платежа</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="checkout js_checkout">
+                                <div class="checkout_left">
+                                    <span class="checkout_text">Сумма с комиссией:</span>
+                                    <div class="price js_price">
+                                        {{ps_amount_to_pay}}
+                                        <img src='/images/svg/currency/{{ps_currency}}.svg' alt='{{ps_currency}}'>
+                                    </div>
+                                    <!--DIFFERENT_CURRENCY-->
+                                    <span class="currency">{{not_converted_amount_with_comission}} <img src='/images/svg/currency/{{currency}}.svg' alt='{{currency}}'></span>
+                                    <!--/DIFFERENT_CURRENCY-->
+                                </div>
+                                <button class="btn btn_green js_payment_button" type="submit"><span>Перейти к оплате</span></button>
+                                <!--APPLEPAY_DATA-->
+                                <div class="js_applepay_data" style="display:none;">{{ps_applepay_data}}</div>
+                                <!--/APPLEPAY_DATA-->
+                            </div>
+                            <div class="offer_checkbox_container">
+                                <label class="checkbox">
+                                    <input type="checkbox" checked="checked">
+                                    <span></span>
+                                </label>
+                                <div class="form_text offer_checkbox_label">Настоящим акцептую <a href="https://front.platron.ru/oferta/%D0%9E%D1%84%D0%B5%D1%80%D1%82%D0%B0%20%D0%9F%D0%BB%D0%B0%D1%82%D1%80%D0%BE%D0%BD%D0%B0.pdf" target="_blank">Публичную оферту на использование сервисов ООО "Платрон"</a>, подтверждаю ознакомление с <a href="https://front.platron.ru/privacy_policy.pdf" target="_blank">Политикой конфиденциальности ООО "Платрон"</a> и даю <a href="https://front.platron.ru/oferta/%D0%A1%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%B8%D0%B5%20%D0%BD%D0%B0%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D1%83%20%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85.pdf" target="_blank">Согласие на обработку персональных данных</a>.</div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--/CONTAINER_NOT_BANKCARD-->
                 </div>
             </div>
             <div class="overlay js_overlay"></div>
         </div>
 
-
-
+        <footer class="footer footer_ind">
+                    <div class="footer_in">
+                        <div class="footer_row">
+                            <div class="footer_left">
+                                <!--POSTPONED_PAYMENT-->
+                                <button class="btn btn_white js_popup_pospone_open" type="button">Отложить оплату заказа</button>
+                                <!--/POSTPONED_PAYMENT-->
+                            </div>
+                            <div class="footer_right">
+                                <div class="support">
+                                    <div class="support_row">Служба поддержки:</div>
+                                    <div class="support_row">
+                                        <p><strong>+7 (495) 983-32-79</strong> (круглосуточно) <strong class="support_col">support@platron.ru</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer_row">
+                            <div class="footer_right">
+                                <ul class="security">
+                                    <li class="security_item"><i class="ico"><img src="/images/icons/comodo.png" alt="comodo"></i></li>
+                                    <li class="security_item"><i class="ico"><a href="/images/pci-dss-certificate.jpg"><img src="/images/icons/pci-dss.png" alt="psi dss"></a></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!--POSTPONED_PAYMENT-->
+                <div class="popup js_popup_postpone">
+                    <div class="popup_in js_popup_postpone_content">
+                        <button class="popup_btn_close js_popup_pospone_close" type="button"></button>
+                        <div class="popup_title">Отложить платеж</div>
+                        <p>Укажите email, на который будет выслана ссылка, перейдя по которой Вы сможете завершить оплату до {{expire_date}}</p>
+                        <div class="form">
+                            <form method="POST">
+                                <div class="form_label">E-mail</div>
+                                <div class="form_field">
+                                    <input name="postpone_email" placeholder="ivanov@gmail.com" type="email" value="{{user_contact_email}}">
+                                </div>
+                                <div class="form_bottom">
+                                    <button class="btn btn_white js_popup_pospone_close" type="button">Отмена</button>
+                                    <button class="btn btn_green"><span>Отправить</span></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!--/POSTPONED_PAYMENT-->
     </body>
 </html>
 
