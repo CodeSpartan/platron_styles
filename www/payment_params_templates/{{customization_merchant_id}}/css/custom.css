@@ -298,12 +298,17 @@ input:checked~.checkmark svg {
   }
 
   .bg_card {
-    height: 420px;
+    height: 260px;
+  }
+
+  .bg_card.bg_card_cvv {
+    display: block;
+    height: 249px;
   }
 
   .form.form_card {
     width: auto;
-    margin-bottom: 200px;
+    margin-bottom: 210px;
   }
 
   .form.form_card .form_in {
@@ -312,7 +317,7 @@ input:checked~.checkmark svg {
   }
 
   .form .form_col.form_col_cvv {
-    top: 239px;
+    top: 249px;
     left: auto;
     right: 20px;
   }
@@ -327,7 +332,7 @@ input:checked~.checkmark svg {
 
   .accept {
     width: auto;
-    top: 95px;
+    top: 115px;
     left: 0;
   }
 
