@@ -326,6 +326,10 @@ input:checked~.checkmark svg {
     margin-left: 0;
   }
 
+  .form .form_item {
+    width: 100%;
+  }
+
   .form-wrap .form-item {
     padding-left: 0;
   }
