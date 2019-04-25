@@ -289,6 +289,20 @@ input:checked~.checkmark svg {
   .checkout .checkout_left {
     margin-top: 0;
   }
+
+  .form.form_card {
+    width: auto;
+  }
+
+  .form .form_in,
+  .bg_card {
+    width: 100%;
+  }
+
+  .bg_card.bg_card_cvv {
+    width: auto;
+    right: 0;
+  }
 }
 
 @media only screen and (max-width: 540px) {
@@ -350,6 +364,12 @@ input:checked~.checkmark svg {
 
   .offer_checkbox_container {
     margin-left: 12px;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .form .form_col {
+    padding-right: 0;
   }
 }
 
