@@ -2,6 +2,7 @@ body {
   font-family: Montserrat, sans-serif;
   color: #1E2A35;
   font-size: 16px;
+  overflow: hidden;
 }
 
 .container {

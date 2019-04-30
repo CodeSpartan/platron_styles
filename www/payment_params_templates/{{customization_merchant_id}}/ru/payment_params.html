@@ -23,12 +23,12 @@
         <!-- INFO: Если хотите изменить способ отображения ошибок - нужно заменить этот блок блоком из setters.js -->
         <script type="text/javascript">
             $(document).ready(function () {
-                $('input[name="card_cvc"]').hidePassword({
-                    innerToggle: true,
-                    toggle: {
-                        attachToEvent: 'mousedown mouseup'
-                    }
-                });
+                //$('input[name="card_cvc"]').hidePassword({
+                //    innerToggle: true,
+                //    toggle: {
+                //        attachToEvent: 'mousedown mouseup'
+                //    }
+                //});
                 var pluginParams = {};
 
                 pluginParams.form_type = 'card_form';
@@ -127,8 +127,8 @@
                                     <div class="form_col form_col_cvv">
                                         <div class="form_row">
                                             <div class="form_field">
-                                                <input type="password" name="card_cvc" placeholder="CVC" maxlength="4" autocomplete="off">
-                                                <div class="custom-placeholder">CVC</div>
+                                              <input type="password" name="card_cvc" placeholder="CVC" maxlength="4" autocomplete="off">
+                                              <div class="custom-placeholder">CVC</div>
                                             </div>
                                         </div>
                                         <div class="info js_input_field_info">
@@ -137,7 +137,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>                
+                            </div>
 
                             <div class="form form_wrap">
                                 <div class="form_item">
