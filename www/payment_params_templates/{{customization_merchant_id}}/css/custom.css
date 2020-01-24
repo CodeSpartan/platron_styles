@@ -1,5 +1,5 @@
 body {
-  font-family: Montserrat, sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   color: #1E2A35;
   font-size: 16px;
   overflow: hidden;
@@ -23,6 +23,9 @@ body {
 .title {
   font-weight: bold;
   color: inherit;
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: -0.3px;
 }
 
 .form.form_card {
@@ -37,9 +40,9 @@ body {
 .bg_card {
   width: 520px;
   height: 300px;
-  background: #fff;
+  background: linear-gradient(237.64deg, #1FA4D4 8.51%, #27C79A 91.65%), #333E50;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  box-shadow: 0px 5px 15px rgba(30, 42, 53, 0.05);
 }
 
 .bg_card.bg_card_cvv {
@@ -64,12 +67,15 @@ body {
 
 .form input {
   font-family: Montserrat, sans-serif;
+  font-size: 17px;
   padding: 0 15px;
   height: 60px;
   -webkit-box-shadow: none;
   box-shadow: none;
-  color: inherit;
-  border: 1px solid #d2d4d7;
+  color: #959BA4;
+  border: none;
+  border-radius: 3px;
+  background: #F9F9FA;
 }
 
 .form.form_card .form_in input {
