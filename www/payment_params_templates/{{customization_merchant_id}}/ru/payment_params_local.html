@@ -70,14 +70,11 @@
                             <input type='hidden' value='RUSSIANSTANDARD' class='js_ps_name'>
                             <div class="js_hidden_ps_name">RUSSIANSTANDARD</div>
                             <div class="form form_card">
-                                <div class="bg_card"></div>
-                                <div class="bg_card bg_card_cvv"></div>
                                 <div class="form_in">
                                     <div class="form_col">
                                         <div class="form_field">
-                                            <!-- INFO: Выберите свой вариант вывода номера карты. Остальное удалить-->
-                                            <input name="card_num" type="text" placeholder="Номер карты" maxlength="22">
-                                            <div class="custom-placeholder">Номер карты</div>
+                                          <input type="text" name="name_on_card" class="form_name" placeholder="Фамилия и имя владельца" maxlength="256">
+                                          <div class="custom-placeholder">Фамилия и имя владельца</div>
                                         </div>
                                         <div class="info js_input_field_info">
                                             <i class="ico ico_info input_field_info_btn js_input_field_info_btn"></i>
@@ -89,12 +86,12 @@
                                         <div class="form_row">
                                             <!-- INFO: Выберите свой вариант вывода номера карты. Остальное удалить-->
                                             <div class="form_field">
-                                                <input type="text" name="exp_month" class="card-date-double-input" placeholder="Месяц" maxlength="2">
+                                                <input type="text" name="exp_month" class="card-date-double-input form_month" placeholder="Месяц" maxlength="2">
                                                 <div class="custom-placeholder">Месяц</div>
                                             </div>
-                                            <span>/</span>
+
                                             <div class="form_field">
-                                                <input type="text" name="exp_year" class="card-date-double-input" placeholder="Год" maxlength="2">
+                                                <input type="text" name="exp_year" class="card-date-double-input form_year" placeholder="Год" maxlength="2">
                                                 <div class="custom-placeholder">Год</div>
                                             </div>
                                             <!--<div class="form_field">
@@ -147,26 +144,14 @@
                                     </div>
                                     <div class="form_col">
                                         <div class="form_field">
-                                            <input type="text" name="name_on_card" placeholder="Имя и фамилия владельца" maxlength="256">
-                                            <div class="custom-placeholder">Имя и фамилия владельца</div>
+                                          <!-- INFO: Выберите свой вариант вывода номера карты. Остальное удалить-->
+                                          <input name="card_num" type="text" class="form_cardnumber" placeholder="Номер карты" maxlength="22">
+                                          <div class="custom-placeholder">Номер карты</div>
                                         </div>
                                         <div class="info js_input_field_info">
                                             <i class="ico ico_info input_field_info_btn js_input_field_info_btn"></i>
                                             <div class="info_window">Как на лицевой стороне карты. Если на карте нет имени и фамилии, то укажите свои имя и фамилию латинскими буквами.</div>
                                         </div>
-                                    </div>
-                                    <div class="accept">
-                                        <div class="accept_text">Мы принимаем</div>
-                                        <ul class="accept_list">
-                                            <!--CARD_TYPES-->
-                                            <li><i class="ico" title="VISA"><img class="ico ico_mps" src="/images/svg/mps/VISA.svg" alt="VISA"></i></li>
-                                            <li><i class="ico" title="VISA ELECTRON"><img class="ico ico_mps" src="/images/svg/mps/VISA ELECTRON.svg" alt="VISA ELECTRON"></i></li>
-                                            <li><i class="ico" title="MASTERCARD"><img class="ico ico_mps" src="/images/svg/mps/MASTERCARD.svg" alt="MASTERCARD"></i></li>
-                                            <li><i class="ico" title="MAESTRO"><img class="ico ico_mps" src="/images/svg/mps/MAESTRO.svg" alt="MAESTRO"></i></li>
-                                            <li><i class="ico" title="MIR"><img class="ico ico_mps" src="/images/svg/mps/MIR.svg" alt="MIR"></i></li>
-                                            <!--/CARD_TYPES-->
-                                        </ul>
-                                        <input type="hidden" value="VI,CA" class="js_accepted_card_brands">
                                     </div>
                                     <div class="form_col form_col_cvv">
                                         <div class="form_row">
@@ -183,6 +168,19 @@
                                 </div>
                             </div>
 
+                            <div class="accept">
+                                <div class="accept_text">Мы принимаем</div>
+                                <ul class="accept_list">
+                                    <!--CARD_TYPES-->
+                                    <li><i class="ico" title="VISA"><img class="ico ico_mps" src="/images/svg/mps/VISA.svg" alt="VISA"></i></li>
+                                    <li><i class="ico" title="VISA ELECTRON"><img class="ico ico_mps" src="/images/svg/mps/VISA ELECTRON.svg" alt="VISA ELECTRON"></i></li>
+                                    <li><i class="ico" title="MASTERCARD"><img class="ico ico_mps" src="/images/svg/mps/MASTERCARD.svg" alt="MASTERCARD"></i></li>
+                                    <li><i class="ico" title="MAESTRO"><img class="ico ico_mps" src="/images/svg/mps/MAESTRO.svg" alt="MAESTRO"></i></li>
+                                    <li><i class="ico" title="MIR"><img class="ico ico_mps" src="/images/svg/mps/MIR.svg" alt="MIR"></i></li>
+                                    <!--/CARD_TYPES-->
+                                </ul>
+                                <input type="hidden" value="VI,CA" class="js_accepted_card_brands">
+                            </div>
                             <!-- INFO: Раскомментировать, если планируется работать с GDS. Если нет - удалить блок-->
                             <!--WITH_GDS_ONLY-->
                             <!--<div class="gds_block">
@@ -199,7 +197,7 @@
                             </div>-->
                             <!--/WITH_GDS_ONLY-->
 
-
+                            <hr>
 
                             <div class="form form_wrap">
                                 <div class="form_item">
@@ -211,7 +209,7 @@
                                             <div class="info_window">Номер указывается в международном формате (только цифры). Например: 79031234567 или 380445430591</div>
                                         </div>
                                     </div>
-                                    <div class="form_text form_text_nowrap">Нужен для отслеживания статуса платежа</div>
+                                    <div class="form_text form_note">Нужен для отслеживания<br>статуса платежа</div>
                                 </div>
                             </div>
 
@@ -239,9 +237,11 @@
                                 </div>
                             </div>
 
+                            <hr>
+
                             <div class="checkout">
                                 <div class="checkout_left">
-                                    <span class="checkout_text">К оплате:</span>
+                                    <span class="checkout_text">К оплате</span>
                                     <div class="price">
                                         55 000
                                         <img src='/images/svg/currency/RUB.svg'>
@@ -249,16 +249,15 @@
                                 </div>
                                 <button class="btn btn_green js_payment_button" type="submit"><span>Оплатить картой</span></button>
                             </div>
+
+                            <hr>
+
                             <div class="offer_checkbox_container">
                                 <label class="checkbox">
                                     <input type="checkbox" checked="checked">
                                     <div class="checkmark">
-                                      <svg width="14" height="11" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                          fill-rule="evenodd"
-                                          clip-rule="evenodd"
-                                          d="M5 11L0 6L1.41 4.59L5 8.17L12.59 0.580002L14 2L5 11Z"
-                                        ></path>
+                                      <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M0.999999 3.14286L3.20838 5.3118C3.5974 5.69387 4.22078 5.69387 4.6098 5.3118L9 1" stroke="white" stroke-width="1.44" stroke-linecap="round" stroke-linejoin="round"/>
                                       </svg>
                                     </div>
                                     <span></span>
