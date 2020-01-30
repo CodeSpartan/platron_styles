@@ -121,12 +121,28 @@ body {
   display: none !important;
 }
 
+.form_shape1,
+.form_shape2 {
+  position: absolute;
+  opacity: 0.1;
+}
+
+.form_shape1 {
+  right: 0;
+  top: 0;
+}
+
+.form_shape2 {
+  right: 89px;
+  top: 13px;
+}
+
 .form input {
   padding: 17px 15px 0 15px;
 }
 
 .form input.field_error, .form select.field_error {
-  border: 1px solid red;
+  border: 1px solid #D90600;
   box-shadow: none;
   color: inherit;
 }
@@ -233,7 +249,7 @@ hr {
 
 .custom-placeholder {
   font-size: 17px;
-  color: #79818C;
+  color: #959BA4;
   position: absolute;
   pointer-events: none;
   top: 18px;
